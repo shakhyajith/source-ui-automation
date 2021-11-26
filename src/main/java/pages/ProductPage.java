@@ -2,10 +2,7 @@ package pages;
 
 import models.ProductData;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import util.core.ElementHandler;
-
-import java.util.Optional;
 
 public class ProductPage {
     private final By productLbl = By.cssSelector(".title");
@@ -18,9 +15,8 @@ public class ProductPage {
     }
 
     public void selectProduct(ProductData productData) {
-        Optional<WebElement> pr = ElementHandler.getElements(inventories).stream().
-                filter(element -> element.findElement(inventoryName).getText().equals(productData.getName())).
-                findFirst();
-        pr.ifPresent(element -> element.findElement(By.tagName("button")).click());
+        ElementHandler.getElementFromList(inventories, element -> element.findElement(inventoryName).
+                getText().equals(productData.getName()))
+                .findElement(By.tagName("button")).click();
     }
 }

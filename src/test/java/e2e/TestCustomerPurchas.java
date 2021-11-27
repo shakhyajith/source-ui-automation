@@ -16,7 +16,7 @@ import pages.components.HeaderComponent;
 import util.core.ElementHandler;
 import util.support.ExcelReader;
 
-public class TestCustomerPurchase extends TestBase {
+public class TestCustomerPurchas extends TestBase {
     String TestId = "T001";
     LoginPage loginPage = new LoginPage();
     ProductPage productPage = new ProductPage();
@@ -65,8 +65,5 @@ public class TestCustomerPurchase extends TestBase {
     }
 
 
-    @AfterSuite
-    public void tearDown() {
-        ElementHandler.quitDriver();
-    }
+
 }

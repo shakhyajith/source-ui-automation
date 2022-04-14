@@ -58,14 +58,11 @@ public class TestCustomerPurchase extends TestBase {
 
         Assert.assertEquals(summary.getOrderItemName(), productData.getName());
         Assert.assertEquals(summary.getOrderItemPrice(), productData.getPrice());
-        Assert.assertEquals(summary.getOrderItemTax(), 1.128);
+        Assert.assertEquals(summary.getOrderItemTax(), 1.28);
         Assert.assertEquals(summary.getOrderItemTotal(), (summary.getOrderItemTax() + productData.getPrice()));
-
-
     }
 
-
-    @AfterSuite
+     @AfterSuite
     public void tearDown() {
         ElementHandler.quitDriver();
     }
